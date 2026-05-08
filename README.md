@@ -193,28 +193,7 @@ Open → **http://localhost:5173**
 
 ---
 
-## 🏭 Production Deployment
 
-### Backend (Railway / Render)
-```bash
-# Set env vars:
-MONGODB_URI=mongodb+srv://...
-JWT_SECRET=<strong_secret>
-NODE_ENV=production
-PORT=5000
-CLIENT_URL=https://your-frontend.vercel.app
-```
-
-### Frontend (Vercel)
-```bash
-# In vite.config.js, update proxy or set env:
-VITE_API_URL=https://your-backend.railway.app/api
-
-# Update utils/api.js baseURL to:
-baseURL: import.meta.env.VITE_API_URL || '/api'
-```
-
----
 
 ## ✨ Features Checklist
 
