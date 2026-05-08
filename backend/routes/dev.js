@@ -1,0 +1,12 @@
+const express = require('express');
+const r = express.Router();
+const c = require('../controllers/devController');
+const { protect } = require('../middleware/auth');
+r.use(protect);
+r.get('/', c.getAll);
+r.post('/', c.create);
+r.put('/:id', c.update);
+r.delete('/:id', c.remove);
+r.post('/:id/tasks', c.addTask);
+r.put('/:id/tasks/:taskId', c.updateTask);
+module.exports = r;

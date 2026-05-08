@@ -1,0 +1,10 @@
+const express = require('express');
+const r = express.Router();
+const c = require('../controllers/englishController');
+const { protect } = require('../middleware/auth');
+r.use(protect);
+r.get('/', c.getAll);
+r.post('/', c.create);
+r.put('/:id', c.update);
+r.delete('/:id', c.remove);
+module.exports = r;
